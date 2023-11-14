@@ -42,6 +42,10 @@ import './less/index.less'
             event.target.style.color = "white";
             event.target.style.backgroundColor = "#17A2B8";
         });
+        element.addEventListener("click", (event) => {
+            event.preventDefault();
+            alert("Dikkat", "Link iptal edildi!!!");
+        });
     });
 }
 
@@ -88,6 +92,4 @@ import './less/index.less'
             event.target.style.filter = "hue-rotate(0)";
         });
     });
-
 }
-
