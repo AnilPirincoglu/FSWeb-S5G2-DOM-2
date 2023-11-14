@@ -16,20 +16,17 @@ import './less/index.less'
 }
 
 //Image Scale
-{
-    document.querySelector("body").addEventListener("keydown", (event) => {
-        document.querySelectorAll("img").forEach((element) => {
-            if (event.key == "-")
-                element.style.transform = "scale(0.5)";
-            if (event.key == "d")
-                element.style.transform = null;
-            if (event.key == "+")
-                element.style.transform = "scale(1.5)";
-        });
+document.querySelector("body").addEventListener("keydown", (event) => {
+    document.querySelectorAll("img").forEach((element) => {
+        if (event.key == "-")
+            element.style.transform = "scale(0.5)";
+        if (event.key == "d")
+            element.style.transform = null;
+        if (event.key == "+")
+            element.style.transform = "scale(1.5)";
     });
-}
-
-//Header-Nav
+});
+//Header Style
 {
     const headerNavA = document.querySelectorAll("header>div>nav>a");
     headerNavA.forEach((element) => {
@@ -44,9 +41,11 @@ import './less/index.less'
         });
         element.addEventListener("click", (event) => {
             event.preventDefault();
-            alert("Dikkat", "Link iptal edildi!!!");
+            alert("Link iptal edildi!!!",);
         });
     });
+
+    document.querySelector("h1").style = "padding-left:1rem";
 }
 
 //Content Pick
@@ -83,13 +82,21 @@ import './less/index.less'
     });
 }
 
-{
-    document.querySelectorAll("img").forEach((element) => {
-        element.addEventListener("click", (event) => {
-            event.target.style.filter = "hue-rotate(180deg)";
-        });
-        element.addEventListener("dblclick", (event) => {
-            event.target.style.filter = "hue-rotate(0)";
-        });
+document.querySelectorAll("img").forEach((element) => {
+    element.addEventListener("click", (event) => {
+        event.target.style.filter = "hue-rotate(180deg)";
     });
-}
+    element.addEventListener("dblclick", (event) => {
+        event.target.style.filter = "hue-rotate(0)";
+    });
+});
+
+window.addEventListener("load", (event) => {
+    alert("+ resimleri büyütür \n- resimleri küçültür \nd resimleri ilk haline getirir.")
+    setTimeout(() => {
+        document.querySelector("header>div").style.backgroundColor = `#FFEBCD`
+    }, 2000);
+});
+
+
+
